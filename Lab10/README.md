@@ -148,6 +148,44 @@ int main() {
 std::cout << reinterpret_cast <double*>(3000) - reinterpret_cast <double*>(2000) << std::endl;
 ```
 
+**Ответ:**
+```
+#include <iostream>
+int main() {
+     {
+     double x = 0;
+     double *d = &x;
+     std::cout << "d = " << reinterpret_cast<size_t>(d) << std::endl;
+     std::cout << "d + 4 = " << reinterpret_cast<size_t>(d + 4) << std::endl;
+     std::cout << "d - 4 = " << reinterpret_cast<size_t>(d - 4) << std::endl;
+
+     std::cout << reinterpret_cast<size_t>(d + 4) - reinterpret_cast<size_t>(d - 4) << std::endl;
+     return 0;
+     }
+     {
+     int x = 0;
+     int *d = &x;
+     std::cout << "d = " << reinterpret_cast<size_t>(d) << std::endl;
+     std::cout << "d + 4 = " << reinterpret_cast<size_t>(d + 4) << std::endl;
+     std::cout << "d - 4 = " << reinterpret_cast<size_t>(d - 4) << std::endl;
+
+     std::cout << reinterpret_cast<size_t>(d + 4) - reinterpret_cast<size_t>(d - 4) << std::endl;
+     return 0;
+     }
+     {
+     std::pair<int, double> x = {0,0.};
+     std::pair<int, double> *d = &x;
+     std::cout << "d = " << reinterpret_cast<size_t>(d) << std::endl;
+     std::cout << "d + 4 = " << reinterpret_cast<size_t>(d + 4) << std::endl;
+     std::cout << "d - 4 = " << reinterpret_cast<size_t>(d - 4) << std::endl;
+
+     std::cout << reinterpret_cast<size_t>(d + 4) - reinterpret_cast<size_t>(d - 4) << std::endl;
+     return 0;
+     }
+}
+
+```
+
 ### Задание 8 **(2)**
 
 *Что надо дописать в записанной ниже программе вместо многоточий, чтобы
