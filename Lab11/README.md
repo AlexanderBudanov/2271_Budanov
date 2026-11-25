@@ -25,6 +25,20 @@ int main() {
 
 ![ошибка](1_error.png)
 
+```
+int bar(int x);
+int foo(int x) {
+    return bar(x);
+}
+int bar(int x) {
+    return x+1;
+}
+int main() {
+    foo(0);
+    return 0;
+}
+```
+
 ### Задание 2 **(1)**
 
 *Функция* **dswap** *должна была обменивать значения своих параметров.* 
